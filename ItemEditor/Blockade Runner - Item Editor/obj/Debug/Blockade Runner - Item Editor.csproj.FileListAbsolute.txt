@@ -1,0 +1,8 @@
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.exe
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade_Runner___Item_Editor.Form1.resources
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade_Runner___Item_Editor.Properties.Resources.resources
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.csproj.GenerateResource.Cache
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.exe
+C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.pdb
