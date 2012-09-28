@@ -6,3 +6,11 @@ C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Ed
 C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.csproj.GenerateResource.Cache
 C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.exe
 C:\Users\Gabriel\Documents\Visual Studio 2008\Projects\Blockade Runner - Item Editor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.pdb
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.exe
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.pdb
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\ResolveAssemblyReference.cache
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade_Runner___Item_Editor.Form1.resources
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade_Runner___Item_Editor.Properties.Resources.resources
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.csproj.GenerateResource.Cache
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.exe
+F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.pdb
