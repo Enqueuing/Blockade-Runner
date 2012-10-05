@@ -10,6 +10,8 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using System.Drawing.Design;
 
 namespace Blockade_Runner___Item_Editor
 {
@@ -30,7 +32,7 @@ namespace Blockade_Runner___Item_Editor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Directories = System.IO.Directory.GetDirectories(MainBRFolder+ @"Content\Items");
+            Directories = System.IO.Directory.GetDirectories(MainBRFolder + @"Content\Items");
             for (int i = 0; i < Directories.Length; i++)
                 Items.Add(BR_ItemData.LoadItemFromPath(Directories[i] + @"\", i));
             treeView1.Nodes.Add("Items");
@@ -52,7 +54,7 @@ namespace Blockade_Runner___Item_Editor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Directories = System.IO.Directory.GetDirectories(MainBRFolder+ @"Content\Items");
+            Directories = System.IO.Directory.GetDirectories(MainBRFolder + @"Content\Items");
             Items.Clear();
             treeView1.Nodes.Clear();
             for (int i = 0; i < Directories.Length; i++)
@@ -64,6 +66,7 @@ namespace Blockade_Runner___Item_Editor
             }
         }
     }
+
 
 
     [System.Diagnostics.DebuggerDisplay("x:{X} y:{Y} len:{System.Math.Sqrt(X*X+Y*Y)}")]
@@ -84,6 +87,8 @@ namespace Blockade_Runner___Item_Editor
         }
     }
 
+    [Editor(typeof(Vector3Editor), typeof(UITypeEditor))]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
     [System.Diagnostics.DebuggerDisplay("x:{X} y:{Y} z:{Z} len:{System.Math.Sqrt(X*X+Y*Y+Z*Z)}")]
     public class Vector3
     {
@@ -140,13 +145,13 @@ namespace Blockade_Runner___Item_Editor
     }
 
     [System.Diagnostics.DebuggerDisplay("Name:{Name} Value:{Value} }")]
-    public class StringString 
+    public class StringString
     {
         [XmlAttribute("name")]
         public string Name { get; set; }
         [XmlAttribute("value")]
-        public string Value{ get; set; }
-        
+        public string Value { get; set; }
+
         public StringString()
         {
             Name = "";
@@ -181,7 +186,7 @@ namespace Blockade_Runner___Item_Editor
         [XmlElement("String")]
         public List<StringString> Strings { get; set; }
         public List<StringFloat> Floats { get; set; }
-        
+
         public Variables()
         {
             Strings = new List<StringString>();
@@ -229,6 +234,14 @@ namespace Blockade_Runner___Item_Editor
 
             return retVal;
 
+        }
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+        {
+            if (destinationType == typeof(string))
+            {
+                return ((Vector2)value).X + "," + ((Vector2)value).Y;
+            }
+            return base.ConvertTo(context, culture, value, destinationType);
         }
 
         public override object CreateInstance(ITypeDescriptorContext context, System.Collections.IDictionary propertyValues)
@@ -298,6 +311,14 @@ namespace Blockade_Runner___Item_Editor
             return retVal;
 
         }
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+        {
+            if (destinationType == typeof(string))
+            {
+                return ((Vector3)value).X + "," + ((Vector3)value).Y + "," + ((Vector3)value).Z;
+            }
+            return base.ConvertTo(context, culture, value, destinationType);
+        }
 
         public override object CreateInstance(ITypeDescriptorContext context, System.Collections.IDictionary propertyValues)
         {
@@ -323,4 +344,74 @@ namespace Blockade_Runner___Item_Editor
             return true;
         }
     }
+
+    class Vector3Editor : UITypeEditor
+    {
+        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+        {
+            return UITypeEditorEditStyle.Modal;
+        }
+        public override object EditValue(ITypeDescriptorContext context, System.IServiceProvider provider, object value)
+        {
+            IWindowsFormsEditorService svc = provider.GetService(typeof(IWindowsFormsEditorService)) as IWindowsFormsEditorService;
+            Vector3 foo = value as Vector3;
+            if (svc != null && foo != null)
+            {
+                using (Vector3Edit form = new Vector3Edit())
+                {
+                    form.X = foo.X.ToString();
+                    form.Y = foo.Y.ToString();
+                    form.Z = foo.Z.ToString();
+                    if (svc.ShowDialog(form) == DialogResult.OK)
+                    {
+                        foo.X = int.Parse(form.X);
+                        foo.Y = int.Parse(form.Y);
+                        foo.Z = int.Parse(form.Z);
+                        
+                    }
+                }
+            }
+            return value; // can also replace the wrapper object here
+        }
+    }
+    class Vector3Edit : Form
+    {
+        private TextBox textboxX;
+        private TextBox textboxY;
+        private TextBox textboxZ;
+        private Button okButton;
+        public Vector3Edit()
+        {
+            textboxX = new TextBox();
+            textboxX.Location = new Point(50, 20);
+            Controls.Add(textboxX);
+            textboxY = new TextBox();
+            textboxY.Location = new Point(50, 60);
+            Controls.Add(textboxY);
+            textboxZ = new TextBox();
+            textboxZ.Location = new Point(50, 100);
+            Controls.Add(textboxZ);
+            okButton = new Button();
+            okButton.Text = "OK";
+            okButton.Dock = DockStyle.Bottom;
+            okButton.DialogResult = DialogResult.OK;
+            Controls.Add(okButton);
+        }
+        public string X
+        {
+            get { return textboxX.Text; }
+            set { textboxX.Text = value; }
+        }
+        public string Y
+        {
+            get { return textboxY.Text; }
+            set { textboxY.Text = value; }
+        }
+        public string Z
+        {
+            get { return textboxZ.Text; }
+            set { textboxZ.Text = value; }
+        }
+    }
+
 }
