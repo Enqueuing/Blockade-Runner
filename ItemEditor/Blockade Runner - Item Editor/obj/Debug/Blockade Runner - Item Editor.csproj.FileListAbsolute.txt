@@ -14,3 +14,5 @@ F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blocka
 F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.csproj.GenerateResource.Cache
 F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.exe
 F:\Git\Blockade-Runner\ItemEditor\Blockade Runner - Item Editor\bin\Debug\Blockade Runner - Item Editor.pdb
+R:\GitTest\ItemEditor\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.exe
+R:\GitTest\ItemEditor\ItemEditor\Blockade Runner - Item Editor\obj\Debug\Blockade Runner - Item Editor.pdb
